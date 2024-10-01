@@ -1,3 +1,6 @@
+// 1 . this is a Java solution for the Rotational Prime Number question
+
+
 import java.util.*;
 
 class CircularPrime{
@@ -6,14 +9,14 @@ class CircularPrime{
         System.out.print("Enter a number :\t");
         int num = new Scanner(System.in).nextInt();
 
-        if(num < 10){
+        if(num < 10){  // checking whether number is smaller that 10
             if(isPrime(num) == true)    
                 System.err.println(num+" is a Prime number, but not a Rotational Prime number");
             else
                 System.err.println(num+" is a not a Prime number, so also it is not a Rotational Prime number");
         }else{
-            int arr[] = numToArray(num);
-            int flag = 0;
+            int arr[] = numToArray(num); // converting number to array
+            int flag = 0;  // for acknowledgement
 
             for(int g=0;g<arr.length;g++){
                 if(isPrime( arrayToNumber(rotateByOne(arr)) ) == false)
@@ -30,7 +33,7 @@ class CircularPrime{
 
     }
 
-    public static int sizeOfNumber(int num){
+    public static int sizeOfNumber(int num){    // for getting size of number
         int size = 0;
 
         if(num < 10){
@@ -44,7 +47,7 @@ class CircularPrime{
         }
     }
 
-    public static int[] numToArray(int num){
+    public static int[] numToArray(int num){    // coverting number to array
         int[] arr = new int[sizeOfNumber(num)];
         int index = 0;
 
@@ -57,7 +60,7 @@ class CircularPrime{
         return arr;
     }
 
-    public static boolean isPrime(int num){
+    public static boolean isPrime(int num){  // checking whether number is prime or not
         if(num == 2 || num == 3 || num == 5 || num == 7){
             return true;
         }else{
@@ -74,14 +77,14 @@ class CircularPrime{
         }
     }
 
-    public static int arrayToNumber(int[] arr){
+    public static int arrayToNumber(int[] arr){ // again converting array to a number
         int num = 0;
         for(int g=0;g<arr.length;g++){
             num = num*10+arr[g];
         }return num;
     }
 
-    public static int[] rotateByOne(int[] arr){
+    public static int[] rotateByOne(int[] arr){ // rotating array by once
         int temp = arr[arr.length-1];
         for(int g=arr.length-1;g>=1;g--){
             arr[g] = arr[g-1];
