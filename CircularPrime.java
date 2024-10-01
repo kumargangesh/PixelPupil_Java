@@ -1,5 +1,7 @@
 // 1 . this is a Java solution for the Rotational Prime Number question
 
+// Name : GANGESH KUMAR
+// Date : 01/10/2024    
 
 import java.util.*;
 
